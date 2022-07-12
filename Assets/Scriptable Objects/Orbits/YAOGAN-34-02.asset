@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15029ee16b8047bb9baea59628686349, type: 3}
+  m_Name: YAOGAN-34-02
+  m_EditorClassIdentifier: 
+  _incline: 63
+  _initialPhase: -252.1
+  _initialRotation: 28.67
+  _radius: 7370
+  _year: 2022
+  _satellitePrefab: {fileID: 6409573964212767952, guid: 70773608b2c008b48b024aca612159f3, type: 3}
