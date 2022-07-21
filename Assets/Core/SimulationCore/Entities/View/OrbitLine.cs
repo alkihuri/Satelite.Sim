@@ -19,6 +19,7 @@ namespace Entities.Orbit
         private float _radius;
         private List<Vector3> _currentOrbitPoints = new List<Vector3>();
         private bool _drawOrbit;
+        private bool _isColorSet;
 
         public bool DRAW_ORBIT
         {
@@ -45,9 +46,10 @@ namespace Entities.Orbit
         void Start()
         {
             if (Random.Range(0f, 1f) < _chanceOfRender) _drawOrbit = true;
+            
             if (!_drawOrbit) return;
             
-            _radius = GetComponent<OrbitController>().ORBIT_RADIUS;
+            _radius = GetComponent<OrbitController>().ORBIT_VISUAL_RADIUS;
             LineRendererSettings();
             DrawOrbit();
         }
@@ -70,9 +72,19 @@ namespace Entities.Orbit
             _lineRenderer.enabled = true;
             _lineRenderer.positionCount = TRAJECTORY_RESOLUTION;
             
-            Color randomColor = Random.Range(0, 2) > 0 ? _color1 : _color2;
-            _lineRenderer.startColor = randomColor;
-            _lineRenderer.endColor = randomColor;
+            if (!_isColorSet)
+            {
+                Color randomColor = Random.Range(0, 2) > 0 ? _color1 : _color2;
+                SetColor(randomColor);
+            }
+        }
+
+        public void SetColor(Color color)
+        {
+            _lineRenderer.startColor = color;
+            _lineRenderer.endColor = color;
+
+            _isColorSet = true;
         }
 
         private void DrawOrbit()

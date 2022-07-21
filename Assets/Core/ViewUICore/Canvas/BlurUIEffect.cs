@@ -9,6 +9,9 @@ namespace View.Canvas
     {
         [SerializeField] private CanvasGroup _canvasGroup;
         [FormerlySerializedAs("_graphics")] [SerializeField] private Graphic[] _bluredGraphics;
+        [SerializeField] private float _maxBlur = 1.5f;
+        
+        private static readonly int BlurAmount = Shader.PropertyToID("_BlurAmount");
 
         protected override void Awake()
         {
@@ -31,20 +34,25 @@ namespace View.Canvas
                 Enable();
                 foreach (var graphic in _bluredGraphics)
                 {
-                    graphic.material.DOKill();
-                    graphic.material.DOFloat(1.5f, "_BlurAmount", time);
+                    if (graphic.material.DOKill() == 0)
+                        graphic.material.SetFloat(BlurAmount, 0);
+                    graphic.material.DOFloat(_maxBlur, BlurAmount, time);
                 }
-                _canvasGroup.DOKill();
+
+                if (_canvasGroup.DOKill() == 0)
+                    _canvasGroup.alpha = 0;
                 _canvasGroup.DOFade(1f, time);
             }
             else
             {
                 foreach (var graphic in _bluredGraphics)
                 {
-                    graphic.material.DOKill();
-                    graphic.material.DOFloat(0, "_BlurAmount", time);
+                    if (graphic.material.DOKill() == 0)
+                        graphic.material.SetFloat(BlurAmount, _maxBlur);
+                    graphic.material.DOFloat(0, BlurAmount, time);
                 }
-                _canvasGroup.DOKill();
+                if (_canvasGroup.DOKill() == 0)
+                    _canvasGroup.alpha = 1;
                 _canvasGroup.DOFade(0, time).OnComplete(Disable);
             }
         }

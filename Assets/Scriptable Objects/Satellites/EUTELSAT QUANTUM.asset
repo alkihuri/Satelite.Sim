@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2020d7319e9047568ff0d60294b172a4, type: 3}
   m_Name: EUTELSAT QUANTUM
   m_EditorClassIdentifier: 
-  _name: EUTELSAT QUANTUM
-  _country: EUTELSAT
-  _mass: 450 kg
-  _dedication: 
-  _launchData: Jul 30, 2021
-  _mse: 
-  _lifetime: 
-  _constructionDetailedInfo: 
+  _name: Sputnik.Satelites.Info.4.name
+  _country: Sputnik.Satelites.Info.4.country
+  _mass: Sputnik.Satelites.Info.4.mass
+  _dedication: Sputnik.Satelites.Info.4.dedication
+  _launchData: Sputnik.Satelites.Info.4.launchData
+  _mse: Sputnik.Satelites.Info.4.MSE
+  _lifetime: Sputnik.Satelites.Info.4.lifetime
+  _constructionDetailedInfo: Sputnik.Satelites.Info.4.constructionDetailedinfo

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -13,8 +14,18 @@ namespace View.Canvas.Video
         [SerializeField] private VideoPlayer _videoPlayerAlpha;
         [SerializeField] private Image _progressBar;
 
+        [Header("Streming video settings:")]
+        [SerializeField] string _colorPath;
+        [SerializeField] string _alphaPath;
+
+        private void Awake()
+        {
+            ClearTextures();
+        }
+
         private void OnEnable()
         {
+            LoadVideoStreamingAssets();
             StartVideo();
         }
 
@@ -38,18 +49,18 @@ namespace View.Canvas.Video
         {
             TrySkip(eventData);
         }
-        
+
         private void SkipToPercent(float percent)
         {
             var frame = _videoPlayerColor.frameCount * percent;
             _videoPlayerColor.frame = (long)frame;
 
             if (!_transparencySupport) return;
-            
+
             frame = _videoPlayerAlpha.frameCount * percent;
             _videoPlayerAlpha.frame = (long)frame;
         }
-        
+
         private void TrySkip(PointerEventData eventData)
         {
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
@@ -59,30 +70,47 @@ namespace View.Canvas.Video
                 SkipToPercent(percent);
             }
         }
-        
-        
+
+
         private void ClearTextures()
         {
             RenderTexture backupTexture = RenderTexture.active;
-            
+
             RenderTexture.active = _videoPlayerColor.targetTexture;
             GL.Clear(true, true, Color.black);
-            
+
             if (_transparencySupport)
             {
                 RenderTexture.active = _videoPlayerAlpha.targetTexture;
                 GL.Clear(true, true, Color.black);
             }
-            
+
             RenderTexture.active = backupTexture;
             // _videoPlayerColor.targetTexture.Release();
             // if (_transparencySupport) _videoPlayerAlpha.targetTexture.Release();
         }
-        
+
         public void LoadVideo(VideoClip clipColor, VideoClip clipAlpha = null)
         {
             _videoPlayerColor.clip = clipColor;
             if (clipAlpha) _videoPlayerAlpha.clip = clipAlpha;
+        }
+
+
+        public void LoadVideoStreamingAssets(string colorPath, string alphaPath)
+        {
+            if (colorPath.Length > 0)
+                _videoPlayerColor.url = Application.streamingAssetsPath + "/Videos/" + colorPath;
+            if (alphaPath.Length > 0)
+                _videoPlayerAlpha.url = Application.streamingAssetsPath + "/Videos/" + alphaPath;
+        }
+
+        public void LoadVideoStreamingAssets()
+        {
+            if (_colorPath.Length > 0)
+                _videoPlayerColor.url = Application.streamingAssetsPath + "/Videos/" + _colorPath;
+            if (_alphaPath.Length > 0)
+                _videoPlayerAlpha.url = Application.streamingAssetsPath + "/Videos/" + _alphaPath;
         }
 
         public void StartVideo()
@@ -95,31 +123,31 @@ namespace View.Canvas.Video
             if (_transparencySupport)
             {
                 if (!_videoPlayerColor.isPrepared || !_videoPlayerAlpha.isPrepared) return;
-                
+
                 _videoPlayerColor.Play();
                 _videoPlayerAlpha.Play();
             }
             else
             {
                 if (!_videoPlayerColor.isPrepared) return;
-                
+
                 _videoPlayerColor.Play();
             }
         }
-        
+
         public void Pause()
         {
             if (_transparencySupport)
             {
                 if (!_videoPlayerColor.isPrepared || !_videoPlayerAlpha.isPrepared) return;
-                
+
                 _videoPlayerColor.Pause();
                 _videoPlayerAlpha.Pause();
             }
             else
             {
                 if (!_videoPlayerColor.isPrepared) return;
-                
+
                 _videoPlayerColor.Pause();
             }
         }
@@ -128,7 +156,7 @@ namespace View.Canvas.Video
         {
             if (_videoPlayerColor.isPaused)
                 Play();
-            else 
+            else
                 Pause();
         }
 
@@ -147,7 +175,7 @@ namespace View.Canvas.Video
             }
             _videoPlayerColor.Play();
         }
-        
+
         public void PrepareVideo()
         {
             _videoPlayerColor.Prepare();

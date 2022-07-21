@@ -72,7 +72,7 @@ namespace DataControllers
                     if (Vector2.Distance(path2D[i], path2D[i + 1]) > _gapDistanceThreshold)
                         gapIndexes.Add(i);
                 }
-                
+
                 CoordinateHandlerForSatellite.Instance.UPDATE_MARKERS(path2D, gapIndexes, currentPosition2D);
                 
                 yield return null;
@@ -128,7 +128,8 @@ namespace DataControllers
             {
                 var hitPoint = hit.point;
                 Debug.DrawLine(position, hitPoint, Color.green, .5f);
-                pixelUV = hit.textureCoord; 
+
+                pixelUV = hit.textureCoord;
             }
             return pixelUV;
         }

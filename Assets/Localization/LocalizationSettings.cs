@@ -11,7 +11,7 @@ namespace Localization
         private void Awake()
         {
             LocalizationManager.Read();
-            LocalizationManager.Language = "English"; 
+            LocalizationManager.Language = "Russian"; 
         }
          
         public void SetLang(string lang)

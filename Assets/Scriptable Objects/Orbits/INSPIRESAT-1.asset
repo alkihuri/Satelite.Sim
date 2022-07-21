@@ -16,5 +16,7 @@ MonoBehaviour:
   _initialPhase: -18.46
   _initialRotation: 43.4
   _radius: 7063
+  _additionalRadius: 800
   _year: 2022
   _satellitePrefab: {fileID: 6409573964212767952, guid: d3f8b7ebde391e24785fbcaa97c2ea2f, type: 3}
+  _orbitColor: {r: 0.2509804, g: 0.37254903, b: 1, a: 1}

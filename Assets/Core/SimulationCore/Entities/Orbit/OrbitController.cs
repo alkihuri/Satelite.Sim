@@ -1,5 +1,6 @@
 using System;
 using Unity.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Jobs;
 
@@ -24,11 +25,13 @@ namespace Entities.Orbit
     public class OrbitController : MonoBehaviour
     {
         private float _orbitRadius;
+        private float _orbitVisualRadius;
         private float _angularSpeed;
         private Transform _orbitedBody;
         private OrbitLine _orbitLine;
         
         public float ORBIT_RADIUS => _orbitRadius;
+        public float ORBIT_VISUAL_RADIUS => _orbitVisualRadius;
         public float ANGULAR_SPEED => _angularSpeed;
         public Transform OrbitedBody => _orbitedBody;
 
@@ -40,6 +43,7 @@ namespace Entities.Orbit
         public void SetupOrbit(float radius, Vector3 rotation, Transform orbitedBody, bool drawOrbit)
         {
             _orbitRadius = radius;
+            _orbitVisualRadius = radius;
             _orbitedBody = orbitedBody;
             _orbitLine.DRAW_ORBIT = drawOrbit;
             transform.localEulerAngles = rotation;
@@ -49,19 +53,21 @@ namespace Entities.Orbit
         public void SetupOrbit(OrbitInfoSO orbitInfo, Transform orbitedBody)
         {
             _orbitRadius = orbitInfo.Radius;
+            _orbitVisualRadius = orbitInfo.Radius + orbitInfo.AdditionalRadius;
             _orbitedBody = orbitedBody;
             _orbitLine.DRAW_ORBIT = true;
+            _orbitLine.SetColor(orbitInfo.OrbitColor);
             transform.localEulerAngles = Vector3.forward * orbitInfo.Incline;
-            transform.Rotate(transform.up, orbitInfo.InitialPhase);
-            transform.Rotate(orbitedBody.up, orbitInfo.InitialRotation);
+            transform.Rotate(transform.up, orbitInfo.InitialPhase, Space.World);
+            transform.Rotate(orbitedBody.up, orbitInfo.InitialRotation, Space.World);
             SetupAngularSpeed();
         }
 
         private void SetupAngularSpeed()
         {
-            // Questionable formula...
-            _angularSpeed = Constants.EarthRadius / _orbitRadius *
-                Mathf.Sqrt(Constants.EarthAcceleration / _orbitRadius) / 2;
+            _angularSpeed =
+                Mathf.Sqrt(Constants.GravitationalConstant * Constants.EarthMass / Mathf.Pow(_orbitRadius * 1000f, 3)) *
+                Mathf.Rad2Deg;
         }
     }
 }

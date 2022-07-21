@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: EUTELSAT QUANTUM
   m_EditorClassIdentifier: 
   _incline: 0
-  _initialPhase: 28.2
-  _initialRotation: 89.78
+  _initialPhase: 35
+  _initialRotation: 0
   _radius: 41300
   _year: 2022
   _satellitePrefab: {fileID: 6409573964212767952, guid: 4860a91a37aaa484c9e75aeadd9eb3f9, type: 3}
+  _orbitColor: {r: 0.2509804, g: 0.37254903, b: 1, a: 1}

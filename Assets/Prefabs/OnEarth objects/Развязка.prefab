@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 385746697112028723, guid: 8ad7a38b2b6eca14e9cefcbb544f0be8, type: 3}
+      propertyPath: _videoPath
+      value: 1.mp4
+      objectReference: {fileID: 0}
     - target: {fileID: 3607590734956848534, guid: 8ad7a38b2b6eca14e9cefcbb544f0be8, type: 3}
       propertyPath: m_RootOrder
       value: 0

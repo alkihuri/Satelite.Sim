@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.Video;
 using View.Canvas;
 using View.Canvas.Video;
@@ -11,12 +12,13 @@ namespace Entities
     {
         [SerializeField] private TransparentVideoController _videoController;
         [SerializeField] private UniversalUIElementEffect _videoPanel;
-        [SerializeField] private VideoClip _clip;
+        [FormerlySerializedAs("_videPath")] [SerializeField] private string _videoPath;
 
         public bool IsSelected { get; }
         public void Select()
         {
-            _videoController.LoadVideo(_clip);
+            //_videoController.LoadVideo(_clip);
+            _videoController.LoadVideoStreamingAssets(_videoPath, "");
             _videoPanel.SetActive(true);
         }
 

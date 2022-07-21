@@ -12,6 +12,7 @@ namespace Entities
         [SerializeField] private string _launchData;
         [SerializeField] private string _mse;
         [SerializeField] private string _lifetime;
+        [SerializeField] bool _isMoonSatelite;
         [SerializeField, TextArea] private string _constructionDetailedInfo;
 
         public string Name => _name;
@@ -22,5 +23,7 @@ namespace Entities
         public string MSE => _mse;
         public string Lifetime => _lifetime;
         public string ConstructionDetailedInfo => _constructionDetailedInfo;
+
+        public bool IsMoonSatelite => _isMoonSatelite;
     }
 }

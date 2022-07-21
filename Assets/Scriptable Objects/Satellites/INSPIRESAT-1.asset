@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2020d7319e9047568ff0d60294b172a4, type: 3}
   m_Name: INSPIRESAT-1
   m_EditorClassIdentifier: 
-  _name: INSPIRESAT-1
-  _country: US
-  _mass: 8 kg
-  _dedication: 
-  _launchData: Feb 14, 2022
-  _mse: 
-  _lifetime: 
-  _constructionDetailedInfo: 
+  _name: Sputnik.Satelites.Info.7.name
+  _country: Sputnik.Satelites.Info.7.country
+  _mass: Sputnik.Satelites.Info.7.mass
+  _dedication: Sputnik.Satelites.Info.7.dedication
+  _launchData: Sputnik.Satelites.Info.7.launchData
+  _mse: Sputnik.Satelites.Info.7.MSE
+  _lifetime: Sputnik.Satelites.Info.7.lifetime
+  _constructionDetailedInfo: Sputnik.Satelites.Info.7.constructionDetailedinfo

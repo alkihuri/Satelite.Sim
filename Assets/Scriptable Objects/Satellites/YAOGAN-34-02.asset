@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2020d7319e9047568ff0d60294b172a4, type: 3}
   m_Name: YAOGAN-34-02
   m_EditorClassIdentifier: 
-  _name: YAOGAN-34-02
-  _country: China
-  _mass: '?'
-  _dedication: 
-  _launchData: Mar 17, 2022
-  _mse: 
-  _lifetime: 
-  _constructionDetailedInfo: 
+  _name: Sputnik.Satelites.Info.6.name
+  _country: Sputnik.Satelites.Info.6.country
+  _mass: Sputnik.Satelites.Info.6.mass
+  _dedication: Sputnik.Satelites.Info.6.dedication
+  _launchData: Sputnik.Satelites.Info.6.launchData
+  _mse: Sputnik.Satelites.Info.6.MSE
+  _lifetime: Sputnik.Satelites.Info.6.lifetime
+  _constructionDetailedInfo: Sputnik.Satelites.Info.6.constructionDetailedinfo

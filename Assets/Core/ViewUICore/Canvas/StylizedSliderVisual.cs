@@ -43,8 +43,7 @@ public class StylizedSliderVisual : MonoBehaviour
     [ContextMenu("Update Visual")]
     private void UpdateVisuals()
     {
-        float positionX = _uiCamera.WorldToScreenPoint(_handle.position).x / Screen.currentResolution.width;
-        
+        float positionX = _uiCamera.WorldToScreenPoint(_handle.position).x / Screen.width;
         _background.material.SetFloat(HandlePosition, positionX);
     }
 }

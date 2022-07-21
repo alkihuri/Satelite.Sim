@@ -55,6 +55,7 @@ MonoBehaviour:
   _canvasGroup: {fileID: 1148205790188865381}
   _bluredGraphics:
   - {fileID: 2490649614354984314}
+  _maxBlur: 1.5
 --- !u!225 &1148205790188865381
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -557,6 +558,8 @@ MonoBehaviour:
   _videoPlayerColor: {fileID: 2490649614730321172}
   _videoPlayerAlpha: {fileID: 0}
   _progressBar: {fileID: 2490649614632444543}
+  _colorPath: 1.mp4
+  _alphaPath: 
 --- !u!114 &2490649614730321175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,6 +576,8 @@ MonoBehaviour:
   _videoPlayerColor: {fileID: 2490649614730321174}
   _videoPlayerAlpha: {fileID: 2490649614730321173}
   _progressBar: {fileID: 2490649614632444543}
+  _colorPath: 1.mp4
+  _alphaPath: 1.mp4
 --- !u!328 &2490649614730321172
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -581,7 +586,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2490649614730321257}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 0ef53d38f0a5a33438768f8888a71fa4, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -616,7 +621,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2490649614730321257}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 0ef53d38f0a5a33438768f8888a71fa4, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -651,7 +656,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2490649614730321257}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 0ef53d38f0a5a33438768f8888a71fa4, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -675,7 +680,7 @@ VideoPlayer:
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
-  m_WaitForFirstFrame: 1
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!1 &2524787510825014155

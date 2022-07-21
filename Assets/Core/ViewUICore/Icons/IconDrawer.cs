@@ -11,6 +11,7 @@ public class IconDrawer : MonoBehaviour
     [SerializeField] private Material[] _materials;
     [SerializeField] private Vector2 _iconScaleRange;
     [SerializeField] private Transform _lookTarget;
+    [SerializeField] private bool _adaptScale;
     
     public Transform[] Transforms;
 
@@ -40,8 +41,8 @@ public class IconDrawer : MonoBehaviour
             }
 
             float scale = scaleRandom.NextFloat(_iconScaleRange.x, _iconScaleRange.y);
-            scale *= (_lookTarget.position - t.position).magnitude;
-            Matrix4x4 transformationMatrix = Matrix4x4.TRS(t.position, _lookTarget.rotation, Vector3.one * scale);
+            if (_adaptScale) scale *= (_lookTarget.position - t.position).magnitude;
+            Matrix4x4 transformationMatrix = Matrix4x4.TRS(t.position, _lookTarget ? _lookTarget.rotation : t.rotation, Vector3.one * scale);
             Material material = _materials[materialRandom.NextInt(0, _materials.Length)];
             
             Graphics.DrawMesh(

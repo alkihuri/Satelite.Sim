@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 343308637551057981}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1.0092592}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.56, y: 0.56, z: 0.56}
   m_Children: []
   m_Father: {fileID: 1440652424859652086}
   m_RootOrder: 1
@@ -81,7 +81,43 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5988713844657019015}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4504046076071884057}
+        m_TargetAssemblyTypeName: View.Canvas.UniversalUIElementEffect, Assembly-CSharp
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SelectionManager, Assembly-CSharp
+        m_MethodName: set_IsLocked
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SelectionManager, Assembly-CSharp
+        m_MethodName: DeselectCurrent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &4771209221382692804
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -311,6 +347,8 @@ MonoBehaviour:
   _videoPlayerColor: {fileID: 1440652424195239785}
   _videoPlayerAlpha: {fileID: 0}
   _progressBar: {fileID: 1440652424752162516}
+  _colorPath: 
+  _alphaPath: 
 --- !u!328 &1440652424195239785
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -319,7 +357,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440652424195239700}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 0ef53d38f0a5a33438768f8888a71fa4, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -357,7 +395,7 @@ GameObject:
   - component: {fileID: 1440652424384933066}
   - component: {fileID: 1440652424384933068}
   - component: {fileID: 1440652424384933069}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: RawImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -546,6 +584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvasGroup: {fileID: 4504046076071884056}
   _bluredGraphics: []
+  _maxBlur: 1.5
 --- !u!225 &4504046076071884056
 CanvasGroup:
   m_ObjectHideFlags: 0

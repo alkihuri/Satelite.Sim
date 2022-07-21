@@ -9,10 +9,12 @@ using DG.Tweening;
 namespace Entities
 {
     public class Moon : MonoBehaviour, IPlanet
-    { 
+    {
+        [SerializeField] private Transform _visual;
+        
         public void Spin()
         {
-            transform.Rotate(0, Constants.SimulatedMoonAngularSpeed * Time.deltaTime, 0);
+            _visual.Rotate(0, Constants.SimulatedMoonAngularSpeed * Time.deltaTime, 0);
         }
 
         private void Update()

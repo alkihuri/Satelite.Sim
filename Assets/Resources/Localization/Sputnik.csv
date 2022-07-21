@@ -19,61 +19,52 @@ Sputnik.MainMenu.Video,Video,Видео
 Sputnik.Satelites.Info.1.name,COSMOS 2501 (GLONASS),COSMOS 2501 (ГЛОНАС)
 Sputnik.Satelites.Info.1.country,Russia,Россия
 Sputnik.Satelites.Info.1.mass,935 kg,935 кг
-Sputnik.Satelites.Info.1.dedication,"Navigation
-search and rescue","навигационный
-поисково-спасательный"
-Sputnik.Satelites.Info.1.launchData,"Plesetck
-Zone 43/4
-Soyuz-2-1b / Fregat-M","Плесецк
-Зона 43/4
-Союз-2-1б / Фрегат-М"
+Sputnik.Satelites.Info.1.dedication,"Navigation, search and rescue","навигационный, поисково-спасательный"
+Sputnik.Satelites.Info.1.launchData,"Plesetck, Zone 43/4, Soyuz-2-1b / Fregat-M","Плесецк, Зона 43/4, Союз-2-1б / Фрегат-М"
 Sputnik.Satelites.Info.1.MSE,"L1, L2 and L3 ranges","L1, L2 и L3 диапазоны"
 Sputnik.Satelites.Info.1.lifetime,10 years,10 лет
 Sputnik.Satelites.Info.1.constructionDetailedinfo,equipped with two solar panels to generate electricity,оснащен двумя солнечными панелями для выработки электроэнергии
 Sputnik.Satelites.Info.2.name,STARLINK-1214  ,СТАРЛИНК-1214  
-Sputnik.Satelites.Info.2.country,США,USA
-Sputnik.Satelites.Info.2.mass,260 кг,260 kg
-Sputnik.Satelites.Info.2.dedication,"Связь, Интернет",Intenet
-Sputnik.Satelites.Info.2.launchData,Мыс Канаверал,Cape Canaveral
-Sputnik.Satelites.Info.2.MSE,"Ku, Ka, E диапазоны","Ku, Ka, E bands"
-Sputnik.Satelites.Info.2.lifetime,4 года,4 years
-Sputnik.Satelites.Info.2.constructionDetailedinfo,"1 солнечная батарея, 4 фазированные антенные решётки, датчики ориентации по звёздам, лазерные транспондеры","1 solar panel, 4 phased array antennas, star orientation sensors, laser transponders"
-Sputnik.Satelites.Info.3.name,"НАВТСАР 60 (USA 196) 
-",NAVSTAR 60 (USA 196) 
-Sputnik.Satelites.Info.3.country,USA,USA
+Sputnik.Satelites.Info.2.country,USA,США
+Sputnik.Satelites.Info.2.mass,260 kg,260 кг
+Sputnik.Satelites.Info.2.dedication,Intenet,"Связь, Интернет"
+Sputnik.Satelites.Info.2.launchData,Cape Canaveral,Мыс Канаверал
+Sputnik.Satelites.Info.2.MSE,"Ku, Ka, E bands","Ku, Ka, E диапазоны"
+Sputnik.Satelites.Info.2.lifetime,4 years,4 года
+Sputnik.Satelites.Info.2.constructionDetailedinfo,"1 solar panel, 4 phased array antennas, star orientation sensors, laser transponders","1 солнечная батарея, 4 фазированные антенные решётки, датчики ориентации по звёздам, лазерные транспондеры"
+Sputnik.Satelites.Info.3.name,NAVSTAR 60 ,НАВСТАР 60
+Sputnik.Satelites.Info.3.country,USA,США
 Sputnik.Satelites.Info.3.mass,787 kg,787 кг
 Sputnik.Satelites.Info.3.dedication,"Communication, Internet","Связь, Интернет"
 Sputnik.Satelites.Info.3.launchData,Cape Canaveral,Мыс Канаверал
 Sputnik.Satelites.Info.3.MSE,L1 L2,L1  L2
 Sputnik.Satelites.Info.3.lifetime,10 years,10 лет
 Sputnik.Satelites.Info.3.constructionDetailedinfo,no information,нет информации
-Sputnik.Satelites.Info.4.name,Eутелсат Квантум,EUTELSAT QUANTUM 
-Sputnik.Satelites.Info.4.country,450 kg,450 кг
-Sputnik.Satelites.Info.4.mass,Connection,Связь
-Sputnik.Satelites.Info.4.dedication,"ELA-3, Ariane-5","ELA-3, Ariane-5"
-Sputnik.Satelites.Info.4.launchData,Ku-band, Ku-диапазон
-Sputnik.Satelites.Info.4.MSE,15 years,15 лет
-Sputnik.Satelites.Info.4.lifetime,8 antennas,8 антенн
-Sputnik.Satelites.Info.4.constructionDetailedinfo,no information,нет инфы
-Sputnik.Satelites.Info.5.name,CHINA (questionable) Chanye-5,КИТАЙ (под вопросом) Чаньэ-5
-Sputnik.Satelites.Info.5.country,Сhine=a,КИТА
+Sputnik.Satelites.Info.4.name,EUTELSAT QUANTUM ,Еутелсат Квантум
+Sputnik.Satelites.Info.4.country,Europe,Европа
+Sputnik.Satelites.Info.4.mass,450 kg,450 кг
+Sputnik.Satelites.Info.4.dedication,Connection,Связь
+Sputnik.Satelites.Info.4.launchData,"ELA-3, Ariane-5","ELA-3, Ariane-5"
+Sputnik.Satelites.Info.4.MSE,Ku-band, Ku-диапазон
+Sputnik.Satelites.Info.4.lifetime,15 years,15 лет
+Sputnik.Satelites.Info.4.constructionDetailedinfo,8 antennas,8 антенн
+Sputnik.Satelites.Info.5.name,CHINA Chanye-5,КИТАЙ Чаньэ-5
+Sputnik.Satelites.Info.5.country,Сhina,КИТАЙ
 Sputnik.Satelites.Info.5.mass,no information,нет инфы
 Sputnik.Satelites.Info.5.dedication,no information,нет инфы
 Sputnik.Satelites.Info.5.launchData,no information,нет инфы
 Sputnik.Satelites.Info.5.MSE,no information,нет инфы
 Sputnik.Satelites.Info.5.lifetime,no information,нет инфы
 Sputnik.Satelites.Info.5.constructionDetailedinfo,no information,нет инфы
-Sputnik.Satelites.Info.6.name,Йаоган-34-02,YAOGAN-34-02
+Sputnik.Satelites.Info.6.name,YAOGAN-34-02,Йаоган-34-02
 Sputnik.Satelites.Info.6.country,China,Китай
-Sputnik.Satelites.Info.6.mass,Surveillance| military purpose,Наблюдение| военное назначение
-Sputnik.Satelites.Info.6.dedication,"Jiuquan
-Changzheng-4С"" (Long March-4C)""","Цзюцюань
-«Чанчжэн-4С» (Long March-4C)"
-Sputnik.Satelites.Info.6launchData,no information,нет инфы
+Sputnik.Satelites.Info.6.mass,no information,нет инфы
+Sputnik.Satelites.Info.6.dedication,Surveillance; military purpose,Наблюдение; военное назначение
+Sputnik.Satelites.Info.6.launchData,Jiuquan Changzheng-4С (Long March-4C),Цзюцюань Чанчжэн-4С (Long March-4C)
 Sputnik.Satelites.Info.6.MSE,no information,нет инфы
 Sputnik.Satelites.Info.6.lifetime,no information,нет инфы
 Sputnik.Satelites.Info.6.constructionDetailedinfo,no information,нет инфы
-Sputnik.Satelites.Info.7.name,Инспирес-1,INSPIRESat-1 
+Sputnik.Satelites.Info.7.name,INSPIRESat-1 ,Инспирес-1
 Sputnik.Satelites.Info.7.country,China,Китай
 Sputnik.Satelites.Info.7.mass,8 kg,8 кг
 Sputnik.Satelites.Info.7.dedication,"study of the ionosphere, the sun","изучение ионосферы, солнца"
@@ -82,27 +73,27 @@ Sputnik.Satelites.Info.7.MSE,no information,нет инфы
 Sputnik.Satelites.Info.7.lifetime,1 year,1 год
 Sputnik.Satelites.Info.7.constructionDetailedinfo,no information,нет инфы
 Sputnik.Satelites.Info.8.name,LRO ,LRO 
-Sputnik.Satelites.Info.8.country,1846 kg,1846 кг
-Sputnik.Satelites.Info.8.mass,study of the moon,изучение Луны
-Sputnik.Satelites.Info.8.dedication,"Cape Canaveral, Atlas V","Мыс Канаверал, «Атлас V»"
-Sputnik.Satelites.Info.8.launchData,no information,нет инфы
+Sputnik.Satelites.Info.8.country,USA,США
+Sputnik.Satelites.Info.8.mass,1846 kg,1846 кг
+Sputnik.Satelites.Info.8.dedication,study of the moon,изучение Луны
+Sputnik.Satelites.Info.8.launchData,"Cape Canaveral, Atlas V","Мыс Канаверал, «Атлас V»"
 Sputnik.Satelites.Info.8.MSE,no information,нет инфы
 Sputnik.Satelites.Info.8.lifetime,no information,нет инфы
 Sputnik.Satelites.Info.8.constructionDetailedinfo,no information,нет инфы
-Sputnik.Satelites.Info.9.name,Фенгйюн-3D,Fengyun-3D 
-Sputnik.Satelites.Info.9.country,China,китай
+Sputnik.Satelites.Info.9.name,Fengyun-3D ,Фенгйюн-3D
+Sputnik.Satelites.Info.9.country,China,Китай
 Sputnik.Satelites.Info.9.mass,no information,нет инфы
 Sputnik.Satelites.Info.9.dedication,no information,нет инфы
 Sputnik.Satelites.Info.9.launchData,no information,нет инфы
-Sputnik.Satelites.Info.9.MSE,one,нет инфы
+Sputnik.Satelites.Info.9.MSE,no information,нет инфы
 Sputnik.Satelites.Info.9.lifetime,no information,нет инфы
 Sputnik.Satelites.Info.9.constructionDetailedinfo,no information,нет инфы
-Sputnik.Satelites.Info.10.name,DOVE-3 (Flock) ,DOVE-3 (Flock) 
-Sputnik.Satelites.Info.10.country,5.2 kg,5.2 кг
-Sputnik.Satelites.Info.10.mass,"Remote sensing, experimental mission in a circular orbit","ДЗЗ, экспериментальная миссия на круговой орбите "
-Sputnik.Satelites.Info.10.dedication,"1xDnepr, Clear","1xДнепр, Ясный"
-Sputnik.Satelites.Info.10.launchData,no information,нет инфы
+Sputnik.Satelites.Info.10.name,DOVE-3 (Flock) ,Дав-3 (Флок) 
+Sputnik.Satelites.Info.10.country,USA,США
+Sputnik.Satelites.Info.10.mass,5.2 kg,5.2 кг
+Sputnik.Satelites.Info.10.dedication,"Remote sensing, experimental mission in a circular orbit","ДЗЗ, экспериментальная миссия на круговой орбите "
+Sputnik.Satelites.Info.10.launchData,"1xDnepr, Clear","1xДнепр, Ясный"
 Sputnik.Satelites.Info.10.MSE,no information,нет инфы
-Sputnik.Satelites.Info.10.lifetime,"2 deployable stationary solar panels, solar cells, batteries","2 развертываемые стационарные солнечные батареи, солнечные элементы, батареи"
-Sputnik.Satelites.Info.10.constructionDetailedinfo,no information,нет инфы
+Sputnik.Satelites.Info.10.lifetime,no information,нет инфы
+Sputnik.Satelites.Info.10.constructionDetailedinfo,"2 deployable stationary solar panels, solar cells, batteries","2 развертываемые стационарные солнечные батареи, солнечные элементы, батареи"
  ,,

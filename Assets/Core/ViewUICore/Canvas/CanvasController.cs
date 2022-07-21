@@ -6,7 +6,7 @@ namespace View.Canvas
 {
     public class CanvasController : MonoBehaviour
     {
-        [SerializeField] private OrbitManager _oManager;
+        [SerializeField] private EntityManager[] _entityManagers;
 
         [SerializeField] private UniversalUIElementEffect[] _allEffects;
         
@@ -21,9 +21,9 @@ namespace View.Canvas
         private void Start()
         {
             _mainMenuToggle.onValueChanged.AddListener(MainMenuNotify);
-            _slider.onValueChanged.AddListener(SetValueOfSatellites);
+            _slider.onValueChanged.AddListener(SetAmountOfEntities);
             
-            UpdateValueOfSatellites();
+            UpdateAmountOfEntities();
         }
         private void MainMenuNotify(bool state)
         {
@@ -70,7 +70,7 @@ namespace View.Canvas
         public void ShowSatelliteSlider()
         {
             _slider.gameObject.SetActive(true);
-            UpdateValueOfSatellites();
+            UpdateAmountOfEntities();
         }
         
         public void HideSatelliteSlider()
@@ -78,14 +78,20 @@ namespace View.Canvas
             _slider.gameObject.SetActive(false);
         }
         
-        private void SetValueOfSatellites(float value)
+        public void SetAmountOfEntities(float value)
         {
-            _oManager.ShowAmountOfOrbits(_exponentionalCurve.Evaluate(value));
+            foreach (var entityManager in _entityManagers)
+            {
+                entityManager.ShowAmountOfEntities(value >= 0 ? _exponentionalCurve.Evaluate(value) : value);
+            }
         }
 
-        public void UpdateValueOfSatellites()
+        public void UpdateAmountOfEntities()
         {
-            _oManager.ShowAmountOfOrbits(_exponentionalCurve.Evaluate(_slider.value));
+            foreach (var entityManager in _entityManagers)
+            {
+                entityManager.ShowAmountOfEntities(_exponentionalCurve.Evaluate(_slider.value));
+            }
         }
     }
 }

@@ -18,3 +18,4 @@ MonoBehaviour:
   _radius: 25300
   _year: 2022
   _satellitePrefab: {fileID: 6409573964212767952, guid: 4210256ce89188543a36805c9e94bb11, type: 3}
+  _orbitColor: {r: 0.2509804, g: 0.37254903, b: 1, a: 1}

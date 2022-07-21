@@ -22,16 +22,20 @@ namespace Entities.Orbit
         [Range(0, 1)] public float LowEquator;
         [Range(0, 1)] public float Medium;
         [Range(0, 1)] public float Geostationary;
+        [Range(0, 1)] public float MoonRandom;
     }
 
-    public class OrbitManager : MonoBehaviour
+    public class OrbitManager : EntityManager
     {
+        [SerializeField] private bool _showFirstOrbit = true;
+        
         [SerializeField] private int _numOfOrbits = 5000;
         [SerializeField] private OrbitController _orbitPrefab;
         [SerializeField] private CanvasController _canvas;  // no time for MVC
         [SerializeField] private Transform _orbitedBody;
         [SerializeField] private OrbitDistribution _orbitDistribution;
         [SerializeField] private OrbitInfoSO[] _realOrbitsInfo;
+        [SerializeField] private OrbitInfoSO _firstOrbitInfo;
         
         private List<Transform> _orbits = new List<Transform>();
         private List<GameObject> _poolOfSatellites = new List<GameObject>();
@@ -48,6 +52,7 @@ namespace Entities.Orbit
 
         void Awake()
         {
+            InitFirstOrbit();
             InnitPoolOfRandomOrbits();
             InnitPoolOfRealOrbits();
             
@@ -69,13 +74,13 @@ namespace Entities.Orbit
         
         private void InnitPoolOfSatellites()
         {
-            GetPreOrbitsFromHierarchy();
+            SetupOrbitsTransforms();
             RandomSatellitesInnit();
             RealSatelliteInnit();
             SatelliteIconsInit();
         }
         
-        private void GetPreOrbitsFromHierarchy()
+        private void SetupOrbitsTransforms()
         {
             _orbits = _poolOfRandomOrbits.Concat(_poolOfRealOrbits).Select(o => o.transform).ToList();
         }
@@ -84,11 +89,9 @@ namespace Entities.Orbit
         {
             for (int i = 0; i < _realOrbitsInfo.Length; i++)
             {
-                float radius = _realOrbitsInfo[i].Radius;
-                
                 Satellite newSatellite = Instantiate(
                     _realOrbitsInfo[i].SatellitePrefab, 
-                    _poolOfRealOrbits[i].transform.position + _poolOfRealOrbits[i].transform.forward * radius * Constants.Scale,
+                    _poolOfRealOrbits[i].transform.position + _poolOfRealOrbits[i].transform.forward * _poolOfRealOrbits[i].ORBIT_VISUAL_RADIUS * Constants.Scale,
                     _poolOfRealOrbits[i].transform.rotation,
                     _poolOfRealOrbits[i].transform);
                 
@@ -105,7 +108,7 @@ namespace Entities.Orbit
                 GameObject newSatellite = new GameObject("Satellite");
                 newSatellite.transform.parent = orbit.transform;
 
-                newSatellite.transform.localPosition = Vector3.forward * orbit.ORBIT_RADIUS * Constants.Scale;
+                newSatellite.transform.localPosition = Vector3.forward * orbit.ORBIT_VISUAL_RADIUS * Constants.Scale;
                 _poolOfSatellites.Add(newSatellite);
             }
         }
@@ -150,11 +153,21 @@ namespace Entities.Orbit
             jobHandle.Complete();
         }
 
+        private void InitFirstOrbit()
+        {
+            if (_firstOrbitInfo == null) return;
+
+            OrbitController newOrbit = Instantiate(_orbitPrefab, _orbitedBody.position, _orbitedBody.rotation, transform);
+            newOrbit.name = _firstOrbitInfo.name + "_orbit";
+            newOrbit.SetupOrbit(_firstOrbitInfo, _orbitedBody);
+            _poolOfRandomOrbits.Add(newOrbit);
+        }
+
         private void InnitPoolOfRandomOrbits()
         {
             for (int i = 0; i < _numOfOrbits; i++)
             {
-                OrbitController newOrbit = Instantiate(_orbitPrefab, transform, true);
+                OrbitController newOrbit = Instantiate(_orbitPrefab, _orbitedBody.position, _orbitedBody.rotation, transform);
                 newOrbit.name = i.ToString() + "_orbit";
                 
                 GenerateRandomOrbit(out float radius, out Vector3 rotation, out bool drawOrbit);
@@ -169,7 +182,7 @@ namespace Entities.Orbit
         {
             foreach (OrbitInfoSO orbitInfo in _realOrbitsInfo)
             {
-                OrbitController newOrbit = Instantiate(_orbitPrefab, transform, true);
+                OrbitController newOrbit = Instantiate(_orbitPrefab, _orbitedBody.position, _orbitedBody.rotation, transform);
                 newOrbit.name = orbitInfo.name + "_orbit";
                 newOrbit.SetupOrbit(orbitInfo, _orbitedBody);
                 _poolOfRealOrbits.Add(newOrbit);
@@ -183,7 +196,8 @@ namespace Entities.Orbit
                 Random.Range(0f, 1f) * _orbitDistribution.Low,
                 Random.Range(0f, 1f) * _orbitDistribution.LowEquator,
                 Random.Range(0f, 1f) * _orbitDistribution.Medium,
-                Random.Range(0f, 1f) * _orbitDistribution.Geostationary
+                Random.Range(0f, 1f) * _orbitDistribution.Geostationary,
+                Random.Range(0f, 1f) * _orbitDistribution.MoonRandom
             };
             var randomOrbit = (OrbitType)orbitWeights.IndexOf(orbitWeights.Max());
                 
@@ -234,6 +248,13 @@ namespace Entities.Orbit
                     rotation =
                         new Vector3(Random.Range(-180f, 180f), Random.Range(-180f, 180f), Random.Range(-180f, 180f));
                     break;
+                case OrbitType.MoonRandom:
+                    lowerBound = (Constants.MoonRadius + Constants.MoonOrbitAltitude.x);
+                    upperBound = (Constants.MoonRadius + Constants.MoonOrbitAltitude.y);
+                    radius = Random.Range(lowerBound, upperBound);
+                    rotation =
+                        new Vector3(Random.Range(-180f, 180f), Random.Range(-180f, 180f), Random.Range(-180f, 180f));
+                    break;
                 default:
                     radius = 0;
                     rotation = Vector3.zero;
@@ -241,9 +262,10 @@ namespace Entities.Orbit
             }
         }
 
-        public void ShowAmountOfOrbits(float n)
+        public override void ShowAmountOfEntities(float n)
         {
-            float amount = n * (_numOfOrbits + _realOrbitsInfo.Length);
+            float amount = n * _orbits.Count;
+            if (_showFirstOrbit) amount += 1; // first satellite is always shown
             
             for (int x = 0; x < _orbits.Count; x++)
             {
@@ -264,7 +286,7 @@ namespace Entities.Orbit
             {
                 var orbitLine = orbit.GetComponent<OrbitLine>();
                 orbitLine.SetTransparency(1);
-                orbitLine.SetWidth(0.04f);
+                // orbitLine.SetWidth(0.04f);
             }
         }
 

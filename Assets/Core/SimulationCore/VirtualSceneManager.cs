@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 // Not real scenes, but switchable objects acting as ones
 
@@ -9,6 +10,8 @@ public class VirtualScene
 {
     public string Name = "New Scene";
     public GameObject[] SceneObjects;
+
+    public UnityEvent SceneChanged;
 
     public bool IsEnabled { get; private set; }
 
@@ -20,6 +23,7 @@ public class VirtualScene
             s.SetActive(true);
         }
         IsEnabled = true;
+        SceneChanged?.Invoke();
     }
     
     public void Disable()

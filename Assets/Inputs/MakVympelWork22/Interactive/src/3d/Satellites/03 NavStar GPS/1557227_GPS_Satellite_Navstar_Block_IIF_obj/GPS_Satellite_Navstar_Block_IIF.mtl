@@ -1,0 +1,103 @@
+# 
+# Wavefront material file
+# Converted by the DEEP Exploration  Deep Exploration 6.5 x64 6.5.0.9182
+# Right Hemisphere, LTD
+# http://www.righthemisphere.com/
+# 
+
+newmtl metal
+Ka 0.0980392 0.0980392 0.0980392
+Kd 1 1 1
+Ks 0.9 0.9 0.9
+illum 2
+Ns 29.8571
+map_Kd navstar_2f_diffuse.png
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl deteil
+Ka 0.0117647 0.0117647 0.0117647
+Kd 0.0117647 0.0117647 0.0117647
+Ks 0.9 0.9 0.9
+illum 2
+Ns 181.019
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl wing
+Ka 0.0901961 0.0901961 0.0901961
+Kd 0.0901961 0.0901961 0.0901961
+Ks 0.9 0.9 0.9
+illum 2
+Ns 207.937
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl glass
+Ka 0.00392157 0.00392157 0.0392157
+Kd 0.00392157 0.00392157 0.0392157
+Ks 0.9 0.9 0.9
+illum 2
+Ns 64
+d 0.74
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 
+
+newmtl body
+Ka 0.00392157 0.00392157 0.00392157
+Kd 1 1 1
+Ks 1 1 1
+illum 2
+Ns 415.873
+map_Kd navstar_2f_diffuse.png
+map_bump navstar_2f_bump.png
+bump navstar_2f_bump.png
+map_opacity 
+map_d 
+refl 
+map_kS navstar_2f_reflect.png
+map_kA 
+map_Ns 
+
+newmtl rail
+Ka 0.0980392 0.0980392 0.0980392
+Kd 0.0980392 0.0980392 0.0980392
+Ks 0.9 0.9 0.9
+illum 2
+Ns 207.937
+map_Kd 
+map_bump 
+bump 
+map_opacity 
+map_d 
+refl 
+map_kS 
+map_kA 
+map_Ns 

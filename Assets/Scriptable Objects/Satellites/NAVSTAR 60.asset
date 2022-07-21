@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2020d7319e9047568ff0d60294b172a4, type: 3}
   m_Name: NAVSTAR 60
   m_EditorClassIdentifier: 
-  _name: NAVSTAR 60
-  _country: US
-  _mass: 787 kg
-  _dedication: 
-  _launchData: Oct 17, 2007
-  _mse: 
-  _lifetime: 
-  _constructionDetailedInfo: 
+  _name: Sputnik.Satelites.Info.3.name
+  _country: Sputnik.Satelites.Info.3.country
+  _mass: Sputnik.Satelites.Info.3.mass
+  _dedication: Sputnik.Satelites.Info.3.dedication
+  _launchData: Sputnik.Satelites.Info.3.launchData
+  _mse: Sputnik.Satelites.Info.3.MSE
+  _lifetime: Sputnik.Satelites.Info.3.lifetime
+  _constructionDetailedInfo: Sputnik.Satelites.Info.3.constructionDetailedinfo

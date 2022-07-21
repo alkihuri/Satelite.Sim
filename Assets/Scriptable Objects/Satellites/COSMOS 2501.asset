@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2020d7319e9047568ff0d60294b172a4, type: 3}
   m_Name: COSMOS 2501
   m_EditorClassIdentifier: 
-  _name: COSMOS 2501
-  _country: CIS
-  _mass: 935 kg
-  _dedication: 
-  _launchData: Nov 30, 2014
-  _mse: 
-  _lifetime: 
-  _constructionDetailedInfo: 
+  _name: Sputnik.Satelites.Info.1.name
+  _country: Sputnik.Satelites.Info.1.name
+  _mass: Sputnik.Satelites.Info.1.mass
+  _dedication: Sputnik.Satelites.Info.1.dedication
+  _launchData: Sputnik.Satelites.Info.1.launchData
+  _mse: Sputnik.Satelites.Info.1.MSE
+  _lifetime: Sputnik.Satelites.Info.1.lifetime
+  _constructionDetailedInfo: Sputnik.Satelites.Info.1.constructionDetailedinfo

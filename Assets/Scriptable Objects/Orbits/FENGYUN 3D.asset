@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15029ee16b8047bb9baea59628686349, type: 3}
+  m_Name: FENGYUN 3D
+  m_EditorClassIdentifier: 
+  _incline: 98.8
+  _initialPhase: -112.93
+  _initialRotation: 231.1
+  _radius: 7206
+  _additionalRadius: 1500
+  _year: 2022
+  _satellitePrefab: {fileID: 8733801242481010149, guid: b366587d0a5b0854f87fe81a0da88a3d, type: 3}
+  _orbitColor: {r: 0.2509804, g: 0.37254903, b: 1, a: 1}
